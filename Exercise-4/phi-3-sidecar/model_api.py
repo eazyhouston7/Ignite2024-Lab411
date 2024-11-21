@@ -25,7 +25,7 @@ class InputData(BaseModel):
 def predict(data: InputData):
     try:
         # Construct the prompt from user input
-        chat_template = '<|system|>\nYou are an AI assistant that helps people find concise information about products. Keep your responses brief and focus on key points. Limit the number of product key features to no more than three.<|end|>\n<|user|>\n{input} <|end|>\n<|assistant|>'
+        chat_template = '<|system|>\nYou are an AI assistant that helps people find concise information about products. Keep your responses brief and focus on key points. Limit the number of product key features to no more than three. Respond with a heavy country accent.<|end|>\n<|user|>\n{input} <|end|>\n<|assistant|>'
 
         input = f"{data.user_message} Product: {data.product_name}. Description: {data.product_description}"
         prompt = chat_template.format(input=input)
